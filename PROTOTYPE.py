@@ -11,7 +11,8 @@ st.set_page_config(page_title="FunOlympics Dashboard", page_icon=":trophy:")
 st.title("FunOlympics Web Traffic Analysis")
  
 # Load GeoIP2 database
-reader = geoip2.database.Reader(r"C:\Users\bida20-024\Downloads\GeoLite2-Country.mmdb")
+db_path = os.path.join(os.path.dirname(__file__), 'data', 'GeoLite2-Country.mmdb')
+reader = geoip2.database.Reader(db_path)
  
 # File upload
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
